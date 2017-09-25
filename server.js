@@ -1,12 +1,13 @@
 var express = require('express');
 var path = require('path');
-var react = require('react');
+// var react = require('react');
 var app = express();
 
+app.set('views',path.join(__dirname,'views'));
 
 app.get('/',function(request, response){
-
-	response.send('<h1>this is a test fam</h1>');
+	//this renders index.html
+	response.render('index');
 
 });
 
