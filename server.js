@@ -1,13 +1,18 @@
+
+// npm install express-react-views
+var ReactEngine = require('express-react-engine');
 var express = require('express');
-var path = require('path');
-// var react = require('react');
+
 var app = express();
 
-app.set('views',path.join(__dirname,'views'));
+app.set('views', __dirname + '/components');
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
 
-app.get('/',function(request, response){
+
+app.get('/',function(request, response, next){
 	//this renders index.html
-	response.render('index');
+	response.render('index.jsx');
 
 });
 
