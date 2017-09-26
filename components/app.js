@@ -1,9 +1,15 @@
 var React = require('react');
+var Header = require('./header');
 
 class App extends React.Component {
   render() {
-    return <h1>My name is Alberto</h1>;
-  }
+      return (
+            <div className="header">
+                  <Header />
+            </div>
+            
+      );
+    }
 }
 
 module.exports = App;

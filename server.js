@@ -11,11 +11,18 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 
 app.get('/',function(request, response, next){
-	//this renders index.html
+	
 	response.render('index.jsx');
 
 });
+app.get('/new',function(request, response, next){
 
-app.listen(3000, function(){
-	console.log('listening at port 3000');
+	response.render('new.jsx');
+
+});
+
+app.listen(8080, function(){
+	console.log('listening at port 8080');
 })
+
+// nodemon ./bulletin-board/server.js
